@@ -1,89 +1,15 @@
-.custom-nav {
-    background-color: transparent !important;
-}
-
 .custom-nav a {
-    color: #fff !important;
+    color: #333 !important;
     border-bottom: 2px solid transparent;
     transition: all .2s ease-in-out;
     font-size: 1.1rem;
 }
 
 .custom-nav a:hover {
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid #333;
 }
 
 .nav-links {
     display: flex !important;
     justify-content: center !important;
-}
-
-.header {
-    height: 100vh;
-    width: 100%;
-    background-color: aliceblue;
-    background-image: url("../../images/banner-3.jpg");
-    background-position: center;
-    background-size: cover;
-    background-color: rgba(0, 0, 0, 0.7);
-    background-blend-mode: overlay;
-    position: relative;
-}
-
-.tanim {
-    display: flex !important;
-    justify-content: center !important;
-}
-
-.banner-text {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #FFFFFF;
-}
-
-.banner-text h2 {
-    font-size: 3.5rem;
-    font-family: 'Poppins', sans-serif;
-}
-
-.banner-text h4 {
-    font-size: 2.1rem;
-    font-family: 'Poppins', sans-serif;
-}
-
-.banner-text p {
-    font-size: 1.2rem;
-    font-family: 'Poppins', sans-serif;
-}
-
-.explore-btn {
-    font-size: 18px;
-    padding: 10px 20px;
-    outline: 0;
-    background-color: transparent;
-    color: #fff;
-    border: 1px solid #fff;
-    transition: all .2s;
-}
-
-.explore-btn:hover {
-    background-color: #fff;
-    color: #333;
-}
-
-@media screen and (max-width: 576px) {
-    .banner-text {
-        top: 60%;
-    }
-    .banner-text h2 {
-        font-size: 2rem;
-    }
-    .banner-text h4 {
-        font-size: 1.5rem;
-    }
-    .banner-text p {
-        font-size: 1rem;
-    }
 }

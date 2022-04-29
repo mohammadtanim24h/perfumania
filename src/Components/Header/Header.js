@@ -5,7 +5,6 @@ import "./Header.css";
 
 const Header = () => {
     return (
-        <div className="header">
             <Navbar className="custom-nav" collapseOnSelect expand="lg" bg="light">
                 <Container className="nav-container text-center">
                     <Navbar.Brand className="d-md-none" as={Link} to="/">PERFUMANIA</Navbar.Brand>
@@ -24,13 +23,6 @@ const Header = () => {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-            <div className="banner-text text-center">
-                <h2 className="my-2">Perfumania</h2>
-                <h4 className="my-2">The Largest Perfume Warehouse</h4>
-                <p className="my-2">Welcome to Perfumania. We have the largest warehouse of perfumes in the whole world. The collection we have here is next level.</p>
-                <a className="explore-btn btn mt-3 rounded-pill" href="#perfumes">View Items</a>
-            </div>
-        </div>
     );
 };
 
