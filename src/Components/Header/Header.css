@@ -13,11 +13,16 @@
     border-bottom: 2px solid white;
 }
 
+.nav-links {
+    display: flex !important;
+    justify-content: center !important;
+}
+
 .header {
     height: 100vh;
     width: 100%;
     background-color: aliceblue;
-    background-image: url("../../images/banner-perfume-2.jpg");
+    background-image: url("../../images/banner-perfume.jpg");
     background-position: center;
     background-size: cover;
     background-color: rgba(0, 0, 0, 0.7);
@@ -53,4 +58,32 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.explore-btn {
+    font-size: 18px;
+    padding: 10px 20px;
+    outline: 0;
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    transition: all .2s;
+}
 
+.explore-btn:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+@media screen and (max-width: 576px) {
+    .banner-text {
+        top: 60%;
+    }
+    .banner-text h2 {
+        font-size: 2rem;
+    }
+    .banner-text h4 {
+        font-size: 1.5rem;
+    }
+    .banner-text p {
+        font-size: 1rem;
+    }
+}
