@@ -1,0 +1,30 @@
+.perfume-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease 0s;
+    padding: 12px;
+    box-shadow: 0 0 5px rgb(0 0 0 / 15%);
+}
+
+.perfume-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 5px rgb(0 0 0 / 20%);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    
+}
+
+.perfume-card img {
+    width: 40%;
+    height: 300px;
+    object-fit: cover;
+    transition: all .3s;
+}
+
+.perfume-card img:hover {
+    filter: saturate(140%);
+}
+
+.perfume-info {
+    margin-left: 20px;
+}
