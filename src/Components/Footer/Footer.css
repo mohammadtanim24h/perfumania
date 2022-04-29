@@ -1,5 +1,5 @@
 .footer {
-    height: 150px;
+    min-height: 150px;
     width: 100%;
 }
 
@@ -7,16 +7,29 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 150px;
+    min-height: 150px;
 }
 .footer-right {
     display: flex;
     justify-content: space-around;
-    height: 150px;
+    min-height: 150px;
     padding-top: 25px;
 }
 
 .footer-right li {
     list-style: none;
     cursor: pointer;
+    margin-bottom: 3px;
+}
+
+@media screen and (max-width: 576px) {
+    .footer-right {
+        flex-direction: column;
+    }
+    .footer-left {
+        order: 3;
+    }
+    .social {
+        margin-top: 20px;
+    }
 }

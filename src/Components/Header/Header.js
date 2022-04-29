@@ -16,10 +16,10 @@ const Header = () => {
                             <Nav.Link as={Link} to="about">About</Nav.Link>
                         </Nav>
                         <Nav className="me-auto">
-                            <Nav.Link as={Link} to="login">Login</Nav.Link>
-                            <Nav.Link as={Link} to="user">
-                                
+                            <Nav.Link as={Link} to="blogs">
+                                Blogs
                             </Nav.Link>
+                            <Nav.Link as={Link} to="login">Login</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
@@ -27,7 +27,7 @@ const Header = () => {
             <div className="banner-text text-center">
                 <h2 className="my-2">Perfumania</h2>
                 <h4 className="my-2">The Largest Perfume Warehouse</h4>
-                <p className="my-2">We have the largest warehouse of perfumes in the whole world. The collection we have here is next level.</p>
+                <p className="my-2">Welcome to Perfumania. We have the largest warehouse of perfumes in the whole world. The collection we have here is next level.</p>
                 <button className="explore-btn rounded-pill">Explore</button>
             </div>
         </div>
