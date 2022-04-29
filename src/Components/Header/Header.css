@@ -8,8 +8,3 @@
 .custom-nav a:hover {
     border-bottom: 2px solid #333;
 }
-
-.nav-links {
-    display: flex !important;
-    justify-content: center !important;
-}
