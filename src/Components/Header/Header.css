@@ -1,0 +1,38 @@
+.custom-nav {
+    background-color: transparent !important;
+}
+
+.custom-nav a {
+    color: #fff !important;
+    border-bottom: 2px solid transparent;
+    transition: all .2s ease-in-out;
+}
+
+.custom-nav a:hover {
+    border-bottom: 2px solid white;
+}
+
+.header {
+    height: 100vh;
+    width: 100%;
+    background-color: aliceblue;
+    background-image: url("../../images/banner-perfume-2.jpg");
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.7);
+    background-blend-mode: overlay;
+    position: relative;
+}
+
+.banner-text {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFFFFF;
+}
+
+.banner-text h2 {
+    font-size: 2.5rem;
+    font-family: 'Poppins', sans-serif;
+}
