@@ -6,6 +6,7 @@
     color: #fff !important;
     border-bottom: 2px solid transparent;
     transition: all .2s ease-in-out;
+    font-size: 1.1rem;
 }
 
 .custom-nav a:hover {
@@ -24,6 +25,11 @@
     position: relative;
 }
 
+.tanim {
+    display: flex !important;
+    justify-content: center !important;
+}
+
 .banner-text {
     position: absolute;
     top: 45%;
@@ -33,6 +39,18 @@
 }
 
 .banner-text h2 {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     font-family: 'Poppins', sans-serif;
 }
+
+.banner-text h4 {
+    font-size: 2.1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.banner-text p {
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+

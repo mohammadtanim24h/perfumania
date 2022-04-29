@@ -7,7 +7,7 @@ const Header = () => {
     return (
         <div className="header">
             <Navbar className="custom-nav" collapseOnSelect expand="lg" bg="light">
-                <Container className="nav-container">
+                <Container className="nav-container text-center">
                     <Navbar.Brand as={Link} to="/">PERFUMANIA</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
@@ -24,8 +24,10 @@ const Header = () => {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-            <div className="banner-text">
-                <h2>Perfumania</h2>
+            <div className="banner-text text-center">
+                <h2 className="my-2">Perfumania</h2>
+                <h4 className="my-2">Your Perfect Stop for Fragrance</h4>
+                <p className="my-2">A perfect Theme to build beautiful and unique Perfume store eCommerce websites. It comes with nice and clean design.</p>
             </div>
         </div>
     );
