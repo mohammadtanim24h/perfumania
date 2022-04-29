@@ -1,0 +1,22 @@
+.footer {
+    height: 150px;
+    width: 100%;
+}
+
+.footer-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+}
+.footer-right {
+    display: flex;
+    justify-content: space-around;
+    height: 150px;
+    padding-top: 25px;
+}
+
+.footer-right li {
+    list-style: none;
+    cursor: pointer;
+}
