@@ -12,7 +12,7 @@ const Perfume = ({ perfume }) => {
                     <h4 className="text-secondary">{name}</h4>
                     <p>Price: ${price}</p>
                     <p>Quantity: {quantity}</p>
-                    <p>{description.length > 130 ? description.slice(0, 130) + '...' : description}</p>
+                    <p>{description.length > 133 ? description.slice(0, 133) + '...' : description}</p>
                     <p>Supplier: {supplier}</p>
                     <button onClick={() => navigate(`/inventory/${_id}`)} className="update-btn rounded-pill">Update</button>
                 </div>

@@ -1,3 +1,54 @@
 .inventory-single {
-    height: calc(80vh - 60px);
+    min-height: calc(80vh - 60px);
+}
+
+.delivered-btn {
+    border: 0;
+    outline: 0;
+    border: 1px solid #E32A53;
+    background-color: #E32A53;
+    color: #fff;
+    padding: 10px 20px;
+    transition: all .2s ease;
+}
+
+.delivered-btn:hover {
+    background-color: transparent;
+    border: 1px solid #E32A53;
+    color: #E32A53;
+}
+
+.theme-text {
+    color: #E32A53;
+}
+
+.restock-section {
+    display: flex;
+    justify-content: center;
+}
+
+.restock-form {
+    border: 1px solid lightgray;
+    width: 300px;
+    padding: 3px 5px;
+    border-radius: 5px;
+    outline: 0;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    display: block;
+}
+
+.restock-form:focus {
+    border-color: #E32A53;
+    box-shadow: 0 0 0 0.25rem rgba(228, 31, 97, 0.2);
+}
+
+.restock-btn {
+    outline: 0;
+    border: 0;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background-color: #E32A53;
+    color: #fff;
+    margin: 0 auto;
+    width: 300px;
 }

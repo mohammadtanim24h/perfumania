@@ -7,7 +7,7 @@
     box-shadow: 0 0 5px rgb(0 0 0 / 10%);
 }
 
-.perfume-card:hover {
+.perfume-card:hover:not(.exclude) {
     transform: translateY(-10px);
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     
