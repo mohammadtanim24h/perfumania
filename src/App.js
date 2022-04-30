@@ -7,6 +7,7 @@ import Footer from "./Components/Footer/Footer";
 import Inventory from "./Components/Inventory/Inventory";
 import Login from "./Components/Login/Login";
 import Register from "./Components/Register/Register";
+import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 
 function App() {
     return (
@@ -14,7 +15,14 @@ function App() {
             <Header></Header>
             <Routes>
                 <Route path="/" element={<Home></Home>}></Route>
-                <Route path="/inventory/:id" element={<Inventory></Inventory>}></Route>
+                <Route
+                    path="/inventory/:id"
+                    element={
+                        <PrivateRoute>
+                            <Inventory></Inventory>
+                        </PrivateRoute>
+                    }
+                ></Route>
                 <Route path="/login" element={<Login></Login>}></Route>
                 <Route path="/register" element={<Register></Register>}></Route>
             </Routes>

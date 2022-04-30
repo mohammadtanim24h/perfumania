@@ -4,10 +4,13 @@ import { useForm } from "react-hook-form";
 import { GiPartyPopper } from "react-icons/gi";
 import auth from '../../Firebase/firebase.init';
 import SocialLogin from "../SocialLogin/SocialLogin";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 
 const Login = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
     // Login hook
     const [
         signInWithEmailAndPassword,
@@ -24,11 +27,11 @@ const Login = () => {
         signInWithEmailAndPassword(email, password);
     };
 
-    const navigate = useNavigate();
+    // navigate to protected route or homepage
     useEffect(() => {
         if (user) {
             console.log(user);
-            navigate('/');
+            navigate(from, { replace: true });
         }
     }, [user]);
 

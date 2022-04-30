@@ -1,19 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase/firebase.init';
 import google from '../../images/icons8-google.png';
 import facebook from '../../images/icons8-facebook.png';
 import github from '../../images/icons8-github.png';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const SocialLogin = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
     // Google Sign in
     const [signInWithGoogle, userGoogle, , errorGoogle] = useSignInWithGoogle(auth);
 
     // Github Sign in 
     const [signInWithGithub, userGit, , errorGit] = useSignInWithGithub(auth);
-    if(userGit) {
-        console.log(userGit);
-    }
+
+    // navigate to protected route or homepage
+    useEffect(() => {
+        if(userGoogle || userGit) {
+            navigate(from, { replace: true });
+        }
+    }, [userGoogle, userGit])
     return (
         <div>
             <div className="d-flex justify-content-center align-items-center mx-auto mt-3" style={{width: '85%'}}>
