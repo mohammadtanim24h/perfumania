@@ -16,7 +16,7 @@ const SocialLogin = () => {
     }
     return (
         <div>
-            <div className="d-flex justify-content-center align-items-center mx-auto mt-3" style={{width: '80%'}}>
+            <div className="d-flex justify-content-center align-items-center mx-auto mt-3" style={{width: '85%'}}>
                 <div style={{width: '40%', height: '1px', backgroundColor: 'lightgray'}} ></div>
                 <div className="mx-2">Or</div>
                 <div style={{width: '40%', height: '1px', backgroundColor: 'lightgray'}} ></div>
