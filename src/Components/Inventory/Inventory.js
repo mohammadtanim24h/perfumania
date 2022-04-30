@@ -35,6 +35,24 @@ const Inventory = () => {
             })
         }
     }
+
+    const handleRestock = (e) => {
+        e.preventDefault();
+        const restockQuantity = parseInt(e.target.quantity.value);
+        setQuantity(quantity + restockQuantity);
+        fetch(`http://localhost:5000/perfume/${id}`, {
+            method: "PUT",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify({quantity: quantity + restockQuantity})
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        })
+        e.target.reset();
+    }
     return (
         <div className="container">
             <div className='inventory-single row mt-5'>
@@ -56,8 +74,8 @@ const Inventory = () => {
                 <div className='col-lg-6 restock-section'>
                     <div>
                         <h4 className='text-center theme-text'>Restock Items</h4>
-                        <form>
-                            <input className='restock-input' type="number" placeholder='Quantity' /> 
+                        <form onSubmit={handleRestock}>
+                            <input className='restock-input' name='quantity' type="number" placeholder='Quantity' /> 
                             <button className='restock-btn mt-2' type='submit'>Restock</button>
                         </form>
                     </div>
