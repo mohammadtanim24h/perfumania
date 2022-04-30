@@ -1,0 +1,22 @@
+.login-container {
+    min-height: calc(83vh - 60px);
+}
+
+.login-form input{
+    display: block;
+    margin: 0 auto;
+    width: 320px;
+    border: 0;
+    outline: 0;
+    transition: border-color .15s ease-in-out;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 5px;
+}
+
+.login-form input:focus {
+    border-bottom-color: #E32A53;
+}
+
+.login-right {
+    background-color: #E32A53;
+}

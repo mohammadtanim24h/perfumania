@@ -33,7 +33,7 @@ const Inventory = () => {
                     <div>
                         <h4 className='text-center theme-text'>Restock Items</h4>
                         <form>
-                            <input className='restock-form' type="number" placeholder='Quantity' />
+                            <input className='restock-input' type="number" placeholder='Quantity' /> 
                             <button className='restock-btn mt-2' type='submit'>Restock</button>
                         </form>
                     </div>
