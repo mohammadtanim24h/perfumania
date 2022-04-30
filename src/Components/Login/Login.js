@@ -5,10 +5,29 @@ import { GiPartyPopper } from "react-icons/gi";
 import auth from '../../Firebase/firebase.init';
 import SocialLogin from "../SocialLogin/SocialLogin";
 import { Link } from "react-router-dom";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 
 const Login = () => {
+    // Login hook
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+      ] = useSignInWithEmailAndPassword(auth);
+
+      
     const { register, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        const email = data.email;
+        const password = data.password;
+        signInWithEmailAndPassword(email, password);
+    };
+
+    if (user) {
+        console.log(user);
+    }
+    
     return (
         <div className="container login-container mt-5">
             <div className="custom-login">
@@ -18,6 +37,7 @@ const Login = () => {
                         <input className="mb-3" placeholder="Email" type="email" {...register("email")} required/>
                         <input className="mb-3" placeholder="Password" type="password" {...register("password")} required/>
                         <p className="text-center">Forgot password? <span className="reset" style={{cursor: 'pointer'}}>Reset</span></p>
+                        {error && <p className="text-center text-danger">{error.message}</p> }
                         <input className="submit-btn w-50 mx-auto rounded-pill" type="submit" value="Login" />
                     </form>
                     <p className="text-center mt-3">New to Perfumania? <Link className="theme-text" to="/register">Register</Link></p>
