@@ -52,7 +52,7 @@ const Register = () => {
                         <input className="mb-3" placeholder="Password" type="password" {...register("password")} required/>
                         <input className="mb-3" placeholder="Confirm Password" type="password" {...register("confirmPassword")} required/>
                         {error && <p className='text-danger text-center'>{error}</p> }
-                        {hookError && <p className='text-danger text-center'>{hookError.message}</p>}
+                        {hookError && <p className='text-danger text-center'>{hookError.message.slice(10, )}</p>}
                         <input className="submit-btn w-50 mx-auto rounded-pill" type="submit" value="Register" />
                     </form>
                     <p className="text-center mt-3">Already a Member? <Link className="theme-text" to="/login">Login</Link></p>

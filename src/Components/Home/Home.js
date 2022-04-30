@@ -13,7 +13,7 @@ const Home = () => {
                 <h2 className="text-secondary text-center display-5 mb-5">
                     Perfumes
                 </h2>
-                <div className="row g-5 mb-5">
+                <div className="row mb-5">
                     {perfumes.map((perfume) => (
                         <Perfume key={perfume._id} perfume={perfume}></Perfume>
                     ))}

@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Login.css";
 import { useForm } from "react-hook-form";
 import { GiPartyPopper } from "react-icons/gi";
 import auth from '../../Firebase/firebase.init';
 import SocialLogin from "../SocialLogin/SocialLogin";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 
 const Login = () => {
@@ -24,10 +24,14 @@ const Login = () => {
         signInWithEmailAndPassword(email, password);
     };
 
-    if (user) {
-        console.log(user);
-    }
-    
+    const navigate = useNavigate();
+    useEffect(() => {
+        if (user) {
+            console.log(user);
+            navigate('/');
+        }
+    }, [user]);
+
     return (
         <div className="container login-container mt-5">
             <div className="custom-login">
@@ -37,7 +41,7 @@ const Login = () => {
                         <input className="mb-3" placeholder="Email" type="email" {...register("email")} required/>
                         <input className="mb-3" placeholder="Password" type="password" {...register("password")} required/>
                         <p className="text-center">Forgot password? <span className="reset" style={{cursor: 'pointer'}}>Reset</span></p>
-                        {error && <p className="text-center text-danger">{error.message}</p> }
+                        {error && <p className="text-center text-danger">{error.message.slice(10, )}</p> }
                         <input className="submit-btn w-50 mx-auto rounded-pill" type="submit" value="Login" />
                     </form>
                     <p className="text-center mt-3">New to Perfumania? <Link className="theme-text" to="/register">Register</Link></p>

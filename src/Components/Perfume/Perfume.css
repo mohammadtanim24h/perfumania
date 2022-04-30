@@ -5,6 +5,7 @@
     transition: all .3s ease 0s;
     padding: 12px;
     box-shadow: 0 0 5px rgb(0 0 0 / 10%);
+    margin: 20px;
 }
 
 .perfume-card:hover:not(.exclude) {
@@ -29,4 +30,18 @@
     background-color: #FF454C;
     color: #fff;
     padding: 10px 20px;
+}
+
+@media screen and (max-width: 576px) {
+    .perfume-card {
+        flex-direction: column;
+        margin: 10px;
+    }
+    .perfume-info {
+        order: 3;
+        margin-top: 20px;
+    }
+    .perfume-card img {
+        width: 75%;
+    }
 }
