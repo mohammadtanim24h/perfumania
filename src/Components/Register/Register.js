@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase/firebase.init';
+import Loading from '../Loading/Loading';
 
 const Register = () => {
     // Create user Hook
@@ -41,6 +42,11 @@ const Register = () => {
             createUserWithEmailAndPassword(email, password);
         }
     };
+
+    // Loading spinner
+    if(loading) {
+        return <Loading></Loading>
+    }
     return (
         <div className="container login-container mt-5">
             <div className="custom-login">

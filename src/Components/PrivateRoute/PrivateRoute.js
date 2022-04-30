@@ -7,6 +7,8 @@ import Loading from '../Loading/Loading';
 const PrivateRoute = ({ children }) => {
     const [user, loading] = useAuthState(auth);
     const location = useLocation();
+
+    // Loading spinner
     if(loading) {
         return <Loading></Loading>
     }

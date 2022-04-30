@@ -6,6 +6,7 @@ import auth from '../../Firebase/firebase.init';
 import SocialLogin from "../SocialLogin/SocialLogin";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import Loading from "../Loading/Loading";
 
 const Login = () => {
     const navigate = useNavigate();
@@ -19,7 +20,7 @@ const Login = () => {
         error,
       ] = useSignInWithEmailAndPassword(auth);
 
-      
+    // Login Function  
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         const email = data.email;
@@ -34,6 +35,11 @@ const Login = () => {
             navigate(from, { replace: true });
         }
     }, [user]);
+
+    // Loading spinner
+    if(loading) {
+        return <Loading></Loading>;
+    }
 
     return (
         <div className="container login-container mt-5">
