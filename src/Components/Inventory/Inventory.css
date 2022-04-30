@@ -5,8 +5,8 @@
 .delivered-btn {
     border: 0;
     outline: 0;
-    border: 1px solid #E32A53;
-    background-color: #E32A53;
+    border: 1px solid #FF454C;
+    background-color: #FF454C;
     color: #fff;
     padding: 10px 20px;
     transition: all .2s ease-in-out;
@@ -14,12 +14,12 @@
 
 .delivered-btn:hover {
     background-color: transparent;
-    border: 1px solid #E32A53;
-    color: #E32A53;
+    border: 1px solid #FF454C;
+    color: #FF454C;
 }
 
 .theme-text {
-    color: #E32A53;
+    color: #FF454C;
 }
 
 .restock-section {
@@ -46,7 +46,7 @@
     border: 0;
     padding: 6px 12px;
     border-radius: 6px;
-    background-color: #E32A53;
+    background-color: #FF454C;
     color: #fff;
     margin: 0 auto;
     width: 300px;
