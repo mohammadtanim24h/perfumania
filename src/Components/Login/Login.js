@@ -2,9 +2,8 @@ import React from "react";
 import "./Login.css";
 import { useForm } from "react-hook-form";
 import { GiPartyPopper } from "react-icons/gi";
-import google from '../../images/icons8-google.png';
-import facebook from '../../images/icons8-facebook.png';
-import github from '../../images/icons8-github.png';
+import auth from '../../Firebase/firebase.init';
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Login = () => {
     const { register, handleSubmit } = useForm();
@@ -19,18 +18,8 @@ const Login = () => {
                         <input className="mb-3" placeholder="Type your password" type="password" {...register("password")} required/>
                         <p className="text-center">Forgot password? <span className="reset" style={{cursor: 'pointer'}}>Reset</span></p>
                         <input className="submit-btn w-50 mx-auto rounded-pill" type="submit" />
-                        {/* ---Or--- style */}
-                        <div className="d-flex justify-content-center align-items-center mx-auto mt-3" style={{width: '80%'}}>
-                            <div style={{width: '40%', height: '1px', backgroundColor: 'lightgray'}} ></div>
-                            <div className="mx-2">Or</div>
-                            <div style={{width: '40%', height: '1px', backgroundColor: 'lightgray'}} ></div>
-                        </div>
                     </form>
-                    <div className="my-3">
-                        <button className="d-block mx-auto mb-2 social-btn"> <img width={36} src={google} alt="" /> Sign in with Google</button>
-                        <button className="d-block mx-auto mb-2 social-btn"> <img width={36} src={facebook} alt="" /> Sign in with Facebook</button>
-                        <button className="d-block mx-auto mb-2 social-btn"> <img width={36} src={github} alt="" /> Sign in with Github</button>
-                    </div>
+                    <SocialLogin></SocialLogin>
                 </div>
                 <div className="login-right">
                     <div>
