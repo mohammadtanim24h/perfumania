@@ -1,5 +1,5 @@
 .login-container {
-    min-height: calc(83vh - 60px);
+    min-height: calc(78vh - 60px);
 }
 
 .custom-login {
@@ -7,7 +7,7 @@
     width: 80%;
     margin: 0 auto;
     justify-content: center;
-    height: 400px;
+    height: 500px;
     border-radius: 8px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
@@ -47,6 +47,9 @@
     color: #fff;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
+    display: flex;
+    justify-content: center;
+    padding-top: 70px;
 }
 
 .submit-btn {
@@ -55,13 +58,27 @@
     color: #fff;
 }
 
+.social-btn {
+    border: 1px solid lightgray;
+    outline: 0;
+    padding: 5px 10px;
+    border-radius: 8px;
+    background-color: #fff;
+    width: 80%;
+    margin: 0 auto;
+}
+
 @media screen and (max-width: 576px) {
     .custom-login {
         flex-direction: column;
         width: 100%;
-        height: 300px;
+        height: auto;
     }
     .login-left {
         order: 3;
+    }
+    .login-right {
+        border-radius: 8px;
+        padding-top: 0;
     }
 }
