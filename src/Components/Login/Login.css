@@ -7,7 +7,7 @@
     width: 80%;
     margin: 0 auto;
     justify-content: center;
-    height: 500px;
+    height: auto;
     border-radius: 8px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
