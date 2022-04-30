@@ -8,7 +8,6 @@ import { signOut } from "firebase/auth";
 
 const Header = () => {
     const [user, loading, error] = useAuthState(auth);
-    console.log(user);
     return (
         <Navbar className="custom-nav" collapseOnSelect expand="lg" bg="light">
             <Container className="nav-container text-center">

@@ -6,12 +6,35 @@ const Inventory = () => {
     const {id} = useParams();
     const navigate = useNavigate();
     const [perfume, setPerfume] = useState({});
+    const [quantity, setQuantity] = useState(0);
     const [sold, setSold] = useState(0);
     useEffect(() => {
         fetch(`http://localhost:5000/perfume/${id}`)
             .then(res => res.json())
-            .then(data => setPerfume(data))
+            .then(data => {
+                setPerfume(data);
+                setQuantity(data.quantity);
+                setSold(data.sold);
+            })
     }, [id])
+
+    const handleDeliver = () => {
+        if(quantity > 0) {
+            setSold(sold + 1);
+            setQuantity(quantity - 1);
+            fetch(`http://localhost:5000/perfume/${id}`, {
+                method: "PUT",
+                headers: {
+                    "content-type": "application/json"
+                },
+                body: JSON.stringify({quantity: quantity - 1, sold: sold + 1})
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
+        }
+    }
     return (
         <div className="container">
             <div className='inventory-single row mt-5'>
@@ -20,11 +43,12 @@ const Inventory = () => {
                         <div className="perfume-info">
                             <h4 className="text-secondary">{perfume?.name}</h4>
                             <p>Price: ${perfume?.price}</p>
-                            <p>Quantity: {perfume?.quantity}</p>
+                            <p>Quantity: {quantity}</p>
                             <p>{perfume?.description}</p>
                             <p>Supplier: {perfume?.supplier}</p>
                             <p>Sold: {sold}</p>
-                            <button className='delivered-btn rounded-pill' onClick={() => setSold(sold + 1)}>Delivered</button>
+                            {quantity === 0 ? <p className='text-danger' style={{fontSize: '18px'}}> <i className="fa-solid fa-x"></i> Sold Out</p> : '' }
+                            <button className='delivered-btn rounded-pill' onClick={handleDeliver}>Deliver</button>
                         </div>
                         <img className="img-fluid" src={perfume?.img} alt="" />
                     </div>
