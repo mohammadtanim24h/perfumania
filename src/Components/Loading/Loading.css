@@ -1,0 +1,13 @@
+.loading-spinner {
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+}
+
+.spinner-grow {
+    height: 40px !important;
+    width: 40px !important;
+    color: #FF454C !important;
+}
