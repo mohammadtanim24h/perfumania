@@ -55,9 +55,9 @@ const Inventory = () => {
                         <div className="perfume-info">
                             <h4 className="text-secondary">{perfume?.name}</h4>
                             <p>Price: ${perfume?.price}</p>
-                            <p>Quantity: {perfume?.quantity}</p>
                             <p>{perfume?.description}</p>
                             <p>Supplier: {perfume?.supplier}</p>
+                            <p>Quantity: {perfume?.quantity}</p>
                             <p>Sold: {perfume?.sold}</p>
                             {perfume?.quantity === 0 ? <p className='text-danger' style={{fontSize: '18px'}}> <i className="fa-solid fa-x"></i> Sold Out</p> : '' }
                             <button className='delivered-btn rounded-pill' onClick={handleDeliver}>Delivered</button>

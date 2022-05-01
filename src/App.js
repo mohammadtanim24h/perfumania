@@ -8,6 +8,7 @@ import Inventory from "./Components/Inventory/Inventory";
 import Login from "./Components/Login/Login";
 import Register from "./Components/Register/Register";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
+import ManageInventory from "./Components/ManageInventory/ManageInventory";
 
 function App() {
     return (
@@ -25,6 +26,7 @@ function App() {
                 ></Route>
                 <Route path="/login" element={<Login></Login>}></Route>
                 <Route path="/register" element={<Register></Register>}></Route>
+                <Route path="/manageInventories" element={<ManageInventory></ManageInventory>}></Route>
             </Routes>
             <Footer></Footer>
         </div>
