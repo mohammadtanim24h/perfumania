@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import usePerfumes from "../../hooks/usePerfumes";
 import Banner from "../Banner/Banner";
 import Perfume from "../Perfume/Perfume";
@@ -17,6 +18,13 @@ const Home = () => {
                     {perfumes.map((perfume) => (
                         <Perfume key={perfume._id} perfume={perfume}></Perfume>
                     ))}
+                </div>
+                <div className="text-center">
+                    <Link to="/manageInventories">
+                        <button className="manage-inventories-btn">
+                            Manage Inventories
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>

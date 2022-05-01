@@ -1,5 +1,5 @@
 .inventory-single {
-    min-height: calc(78vh - 60px);
+    min-height: calc(73vh - 60px);
 }
 
 .delivered-btn {
@@ -50,4 +50,10 @@
     color: #fff;
     margin: 0 auto;
     width: 300px;
+}
+
+@media screen and (max-width: 576px) {
+    .manage-inventories-btn {
+        margin-top: 30px;
+    }
 }

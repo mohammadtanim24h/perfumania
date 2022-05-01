@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import './Inventory.css';
 
 const Inventory = () => {
@@ -74,6 +74,13 @@ const Inventory = () => {
                         </form>
                     </div>
                 </div>
+            </div>
+            <div className="text-center">
+                <Link to="/manageInventories">
+                    <button className="manage-inventories-btn">
+                        Manage Inventories
+                    </button>
+                </Link>
             </div>
         </div>
     );
