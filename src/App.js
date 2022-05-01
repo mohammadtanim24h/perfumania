@@ -9,6 +9,7 @@ import Login from "./Components/Login/Login";
 import Register from "./Components/Register/Register";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import ManageInventory from "./Components/ManageInventory/ManageInventory";
+import AddPerfume from "./Components/AddPerfume/AddPerfume";
 
 function App() {
     return (
@@ -26,7 +27,22 @@ function App() {
                 ></Route>
                 <Route path="/login" element={<Login></Login>}></Route>
                 <Route path="/register" element={<Register></Register>}></Route>
-                <Route path="/manageInventories" element={<ManageInventory></ManageInventory>}></Route>
+                <Route
+                    path="/manageInventories"
+                    element={
+                        <PrivateRoute>
+                            <ManageInventory></ManageInventory>
+                        </PrivateRoute>
+                    }
+                ></Route>
+                <Route
+                    path="/addItems"
+                    element={
+                        <PrivateRoute>
+                            <AddPerfume></AddPerfume>
+                        </PrivateRoute>
+                    }
+                ></Route>
             </Routes>
             <Footer></Footer>
         </div>

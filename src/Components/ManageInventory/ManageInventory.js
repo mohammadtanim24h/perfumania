@@ -1,22 +1,27 @@
 import React from "react";
 import { Table } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import usePerfumes from "../../hooks/usePerfumes";
 import PerfumeTable from "../PerfumeTable/PerfumeTable";
-import './ManageInventory.css';
+import "./ManageInventory.css";
 
 const ManageInventory = () => {
+    const navigate = useNavigate();
     const [perfumes, setPerfumes] = usePerfumes();
 
     // Handle Perfume Deletion
     const handleDelete = (id) => {
         fetch(`http://localhost:5000/perfume/${id}`, {
-            method: "DELETE"
+            method: "DELETE",
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-        })
-    }
+            .then((res) => res.json())
+            .then((data) => {
+                const remaining = perfumes.filter(
+                    (perfume) => perfume._id !== id
+                );
+                setPerfumes(remaining);
+            });
+    };
     return (
         <div className="mt-3">
             <h2 className="text-center theme-text my-3 ">Manage Inventory</h2>
@@ -31,11 +36,23 @@ const ManageInventory = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {
-                        perfumes.map(perfume => <PerfumeTable key={perfume._id} perfume={perfume} handleDelete={handleDelete}></PerfumeTable>)
-                    }
+                    {perfumes.map((perfume) => (
+                        <PerfumeTable
+                            key={perfume._id}
+                            perfume={perfume}
+                            handleDelete={handleDelete}
+                        ></PerfumeTable>
+                    ))}
                 </tbody>
             </Table>
+            <div className="text-center">
+                <button
+                    onClick={() => navigate("/addItems")}
+                    className="add-btn mt-3"
+                >
+                    Add Items <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
         </div>
     );
 };
