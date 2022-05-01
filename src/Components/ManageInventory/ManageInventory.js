@@ -50,7 +50,7 @@ const ManageInventory = () => {
                     onClick={() => navigate("/addItems")}
                     className="add-btn mt-3"
                 >
-                    Add Items <i class="fa-solid fa-plus"></i>
+                    Add Items <i className="fa-solid fa-plus"></i>
                 </button>
             </div>
         </div>
