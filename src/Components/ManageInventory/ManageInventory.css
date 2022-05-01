@@ -1,0 +1,10 @@
+.custom-table {
+    width: 70%;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 576px) {
+    .custom-table {
+        width: 100%;
+    }
+}

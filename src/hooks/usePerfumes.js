@@ -8,7 +8,7 @@ const usePerfumes = () => {
             .then(data => setPerfumes(data))
     }, [])
 
-    return [perfumes];
+    return [perfumes, setPerfumes];
 }
 
 export default usePerfumes;
