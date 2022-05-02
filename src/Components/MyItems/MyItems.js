@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../Firebase/firebase.init";
-import Perfume from "../Perfume/Perfume";
+import MyPerfume from "../MyPerfume/MyPerfume";
 
 const MyItems = () => {
     const [user] = useAuthState(auth);
@@ -16,7 +16,9 @@ const MyItems = () => {
         <div className="my-3 container">
             <h2 className="mb-3 text-secondary text-center">My Items</h2>
             <div className="row mb-3">
-                
+                {perfumes.map((perfume) => (
+                    <MyPerfume key={perfume._id} perfume={perfume}></MyPerfume>
+                ))}
             </div>
         </div>
     );

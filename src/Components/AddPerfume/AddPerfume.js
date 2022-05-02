@@ -81,7 +81,7 @@ const AddPerfume = () => {
                 />
                 <input
                     type="submit"
-                    className="add-btn w-25 mx-auto exclude-add d-flex justify-content-center mt-3"
+                    className="theme-btn w-25 mx-auto exclude-add d-flex justify-content-center mt-3"
                     value="Add Item"
                 />
             </form>
