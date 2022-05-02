@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const MyPerfume = ({perfume}) => {
+const MyPerfume = ({perfume, handleDelete}) => {
     const { name, img, description, price, supplier, quantity, _id } = perfume;
     return (
         <div className="col-lg-6">
@@ -12,7 +12,7 @@ const MyPerfume = ({perfume}) => {
                     <p>Quantity: {quantity}</p>
                     <p>{description.length > 133 ? description.slice(0, 133) + '...' : description}</p>
                     <p>Supplier: {supplier}</p>
-                    <button className='theme-btn rounded-pill'>Delete</button>
+                    <button className='theme-btn rounded-pill' onClick={() => handleDelete(_id)}>Delete</button>
                 </div>
                 <img className="img-fluid" src={img} alt="" />
             </div>
