@@ -1,6 +1,7 @@
 import React from "react";
 import { Table } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import usePerfumes from "../../hooks/usePerfumes";
 import PerfumeTable from "../PerfumeTable/PerfumeTable";
 import "./ManageInventory.css";
@@ -11,20 +12,41 @@ const ManageInventory = () => {
 
     // Handle Perfume Deletion
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/perfume/${id}`, {
-            method: "DELETE",
-        })
-            .then((res) => res.json())
-            .then((data) => {
-                const remaining = perfumes.filter(
-                    (perfume) => perfume._id !== id
-                );
-                setPerfumes(remaining);
-            });
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            iconColor: "#FFC107",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3DBE29",
+            confirmButtonText: "Yes, delete it!",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/perfume/${id}`, {
+                    method: "DELETE",
+                })
+                    .then((res) => res.json())
+                    .then((data) => {
+                        if (data.deletedCount === 1) {
+                            const remaining = perfumes.filter(
+                                (perfume) => perfume._id !== id
+                            );
+                            setPerfumes(remaining);
+                        }
+                    });
+                Swal.fire("Deleted!", "Your Perfume has been deleted.", "success");
+            }
+        });
     };
     return (
         <div className="mt-3">
-            <h2 className="text-center text-secondary my-3">Manage Inventory</h2>
+            <h2 className="text-center text-secondary my-3">
+                Manage Inventory
+            </h2>
+            <h4 className="text-center text-secondary">
+                Total Perfumes: {perfumes.length}
+            </h4>
             <Table bordered hover className="custom-table">
                 <thead>
                     <tr>
