@@ -21,3 +21,7 @@
     outline: 0;
     border: 0;
 }
+
+.dropdown-item:hover {
+    background-color: #fff !important;
+}

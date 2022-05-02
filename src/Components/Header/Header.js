@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../Firebase/firebase.init";
@@ -29,13 +29,37 @@ const Header = () => {
                         <Nav.Link as={Link} to="about">
                             About
                         </Nav.Link>
+                        {user ? (
+                            <NavDropdown
+                                title="Inventory"
+                                id="collasible-nav-dropdown"
+                            >
+                                <NavDropdown.Item
+                                    as={Link}
+                                    to="/manageInventories"
+                                >
+                                    Manage Items
+                                </NavDropdown.Item>
+                                <NavDropdown.Item as={Link} to="/addItems">
+                                    Add Items
+                                </NavDropdown.Item>
+                                <NavDropdown.Item as={Link} to="/myItems">
+                                    My Items
+                                </NavDropdown.Item>
+                            </NavDropdown>
+                        ) : (
+                            ""
+                        )}
                     </Nav>
                     <Nav className="me-auto">
                         <Nav.Link as={Link} to="blogs">
                             Blogs
                         </Nav.Link>
                         {user ? (
-                            <button onClick={() => signOut(auth)} className="logout-btn rounded-pill ms-2">
+                            <button
+                                onClick={() => signOut(auth)}
+                                className="logout-btn rounded-pill ms-2"
+                            >
                                 Logout
                             </button>
                         ) : (
