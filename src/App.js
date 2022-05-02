@@ -11,6 +11,7 @@ import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import ManageInventory from "./Components/ManageInventory/ManageInventory";
 import AddPerfume from "./Components/AddPerfume/AddPerfume";
 import MyItems from "./Components/MyItems/MyItems";
+import NotFound from "./Components/NotFound/NotFound";
 
 function App() {
     return (
@@ -52,6 +53,7 @@ function App() {
                         </PrivateRoute>
                     }
                 ></Route>
+                <Route path="*" element={<NotFound></NotFound>}></Route>
             </Routes>
             <Footer></Footer>
         </div>
