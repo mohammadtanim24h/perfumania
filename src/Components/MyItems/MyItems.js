@@ -3,6 +3,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import Swal from "sweetalert2";
 import auth from "../../Firebase/firebase.init";
 import MyPerfume from "../MyPerfume/MyPerfume";
+import "./MyItems.css";
 
 const MyItems = () => {
     const [user] = useAuthState(auth);
@@ -48,8 +49,16 @@ const MyItems = () => {
         });
     };
     return (
-        <div className="my-3 container">
+        <div className="my-3 container my-items-container">
             <h2 className="mb-3 text-secondary text-center">My Items</h2>
+            {perfumes.length === 0 && (
+                <div className="w-50 mx-auto shadow rounded p-5 text-center my-3">
+                    <h4>
+                        You don't have any items in your inventory right now.{" "}
+                    </h4>
+                    <h5>Please add some items in your inventory.</h5>
+                </div>
+            )}
             <div className="row mb-3">
                 {perfumes.map((perfume) => (
                     <MyPerfume
