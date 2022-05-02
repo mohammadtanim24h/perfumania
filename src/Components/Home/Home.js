@@ -15,7 +15,7 @@ const Home = () => {
                     Perfumes
                 </h2>
                 <div className="row mb-5">
-                    {perfumes.map((perfume) => (
+                    {perfumes?.slice(0, 6)?.map((perfume) => (
                         <Perfume key={perfume._id} perfume={perfume}></Perfume>
                     ))}
                 </div>
