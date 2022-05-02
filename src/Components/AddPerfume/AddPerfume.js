@@ -22,8 +22,8 @@ const AddPerfume = () => {
         })
     };
     return (
-        <div className="login-container my-5">
-            <h2 className="theme-text text-center">Add Items</h2>
+        <div className="login-container my-3">
+            <h2 className="text-secondary text-center mb-2">Add Inventory Item</h2>
             <form className="add-item-form" onSubmit={handleSubmit(onSubmit)}>
                 <input placeholder="Perfume Name" {...register("name")} required />
                 <input placeholder="Price" type="number" {...register("price")} required />

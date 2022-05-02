@@ -24,7 +24,7 @@ const ManageInventory = () => {
     };
     return (
         <div className="mt-3">
-            <h2 className="text-center theme-text my-3 ">Manage Inventory</h2>
+            <h2 className="text-center text-secondary my-3">Manage Inventory</h2>
             <Table bordered hover className="custom-table">
                 <thead>
                     <tr>

@@ -16,13 +16,13 @@ const Inventory = () => {
     }, [id, reload])
 
     const handleDeliver = () => {
-        if(perfume?.quantity > 0) {
+        if(parseInt(perfume?.quantity) > 0) {
             fetch(`http://localhost:5000/perfume/${id}`, {
                 method: "PUT",
                 headers: {
                     "content-type": "application/json"
                 },
-                body: JSON.stringify({quantity: perfume?.quantity - 1, sold: perfume?.sold + 1})
+                body: JSON.stringify({quantity: parseInt(perfume?.quantity) - 1, sold: parseInt(perfume?.sold) + 1})
             })
             .then(res => res.json())
             .then(data => {
@@ -39,7 +39,7 @@ const Inventory = () => {
             headers: {
                 "content-type": "application/json"
             },
-            body: JSON.stringify({quantity: perfume?.quantity + restockQuantity})
+            body: JSON.stringify({quantity: parseInt(perfume?.quantity) + restockQuantity})
         })
         .then(res => res.json())
         .then(data => {
