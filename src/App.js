@@ -10,6 +10,7 @@ import Register from "./Components/Register/Register";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import ManageInventory from "./Components/ManageInventory/ManageInventory";
 import AddPerfume from "./Components/AddPerfume/AddPerfume";
+import MyItems from "./Components/MyItems/MyItems";
 
 function App() {
     return (
@@ -40,6 +41,14 @@ function App() {
                     element={
                         <PrivateRoute>
                             <AddPerfume></AddPerfume>
+                        </PrivateRoute>
+                    }
+                ></Route>
+                <Route
+                    path="/myItems"
+                    element={
+                        <PrivateRoute>
+                            <MyItems></MyItems>
                         </PrivateRoute>
                     }
                 ></Route>
