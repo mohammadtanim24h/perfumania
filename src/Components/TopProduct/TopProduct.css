@@ -1,15 +1,7 @@
-.top-product {
-    position: relative;
-}
-
-.badge {
-    position: absolute;
-    left: 76px;
-    top: 0;
-    z-index: 99;
-    padding: 6px 12px;
+.top-product-header {
     background-color: #FF454C;
-    border-radius: 0;
+    color: #fff;
+    border: 0;
 }
 
 .top-product img{
