@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import usePerfumes from "../../hooks/usePerfumes";
 import Banner from "../Banner/Banner";
 import Perfume from "../Perfume/Perfume";
+import TopProducts from "../TopProducts/TopProducts";
 import "./Home.css";
 
 const Home = () => {
@@ -27,6 +28,10 @@ const Home = () => {
                     </Link>
                 </div>
             </div>
+            <div className="container">
+                <hr className="my-3" />
+            </div>
+            <TopProducts></TopProducts>
         </div>
     );
 };

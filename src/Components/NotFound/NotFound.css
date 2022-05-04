@@ -1,6 +1,7 @@
 .not-found-container {
-    min-height: 76vh;
+    min-height: 100vh;
     position: relative;
+    width: 100%;
 }
 
 .not-found {
