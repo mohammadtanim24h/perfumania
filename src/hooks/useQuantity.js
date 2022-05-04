@@ -1,27 +1,27 @@
 import { useEffect, useState } from "react";
 
-const useSold = () => {
-    const [sold, setSold] = useState(0);
+const useQuantity = () => {
+    const [quantity, setQuantity] = useState(0);
     useEffect(() => {
         fetch("http://localhost:5000/perfumes")
             .then((res) => res.json())
             .then((data) => {
                 if (data.length > 0) {
-                    const soldItems = data.map((perfume) =>
-                        parseInt(perfume.sold)
+                    const quantityArr = data.map((perfume) =>
+                        parseInt(perfume.quantity)
                     );
                     const initialValue = 0;
-                    const soldSum = soldItems.reduce(
+                    const totalQuantity = quantityArr.reduce(
                         (previousValue, currentValue) =>
                             previousValue + currentValue,
                         initialValue
                     );
-                    setSold(soldSum);
+                    setQuantity(totalQuantity);
                 }
             });
     }, []);
 
-    return sold;
+    return quantity;
 };
 
-export default useSold;
+export default useQuantity;
