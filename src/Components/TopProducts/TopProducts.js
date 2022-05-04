@@ -11,7 +11,7 @@ const TopProducts = () => {
     
     return (
         <div className='text-center container my-5'>
-            <h3 className='text-secondary mb-3'>Top products from our warehouse.</h3>
+            <h2 className='text-secondary mb-3'>Top products from our warehouse.</h2>
             <p className='lead mb-3'>The perfumes that were sold the most in the last month.</p>
             <div className="row mt-5">
                 {
