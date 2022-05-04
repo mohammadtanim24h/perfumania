@@ -1,4 +1,5 @@
 import React from "react";
+import useProductsCount from "../../hooks/useProductsCount";
 import useQuantity from "../../hooks/useQuantity";
 import useSold from "../../hooks/useSold";
 import "./Dashboard.css";
@@ -6,7 +7,7 @@ import "./Dashboard.css";
 const Dashboard = () => {
     const sold = useSold();
     const quantity = useQuantity();
-    
+    const productsCount = useProductsCount();
     return (
         <div className="container">
             <div className="dashboard-container">
@@ -19,7 +20,7 @@ const Dashboard = () => {
                     <h5>Total Quantity</h5>
                 </div>
                 <div className="total-products">
-                    <h1>Products</h1>
+                    <h1>{productsCount}</h1>
                     <h5>Number of Products</h5>
                 </div>
             </div>
