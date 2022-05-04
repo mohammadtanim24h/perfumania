@@ -37,7 +37,7 @@ const Footer = () => {
                             <li>Team</li>
                             <li>Executives</li>
                         </div>
-                        <div className="text-center">
+                        <div className="text-center mt-4">
                             <h4>Social Media</h4>
                            <div className=" d-flex justify-content-center align-items-center social">
                             <img style={{cursor: 'pointer'}} width={36} className="me-2" src={facebook} alt="facebook" />

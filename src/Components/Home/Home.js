@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import usePerfumes from "../../hooks/usePerfumes";
 import Banner from "../Banner/Banner";
+import Dashboard from "../Dashboard/Dashboard";
 import Perfume from "../Perfume/Perfume";
 import TopProducts from "../TopProducts/TopProducts";
 import "./Home.css";
@@ -31,6 +32,13 @@ const Home = () => {
             <div className="container">
                 <hr className="my-3" />
             </div>
+            <h2 className="text-center text-secondary">Dashboard</h2>
+            <Dashboard></Dashboard>
+            
+            <div className="container">
+                <hr className="my-3" />
+            </div>
+            
             <TopProducts></TopProducts>
         </div>
     );

@@ -1,0 +1,46 @@
+.dashboard-container {
+    display: flex;
+    justify-content: center;
+}
+
+.perfumes-sold {
+    background-color: #FF454C;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px;
+    width: 300px;
+}
+
+.total-quantity {
+    background-color: #F49B11;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px;
+    width: 300px;
+}
+
+.total-products {
+    background-color: #00C0EF;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px;
+    width: 300px;
+}
+
+.perfumes-sold h1, h5 {
+    color: #fff;
+}
+
+.total-quantity h1, h5 {
+    color: #fff;
+}
+
+.total-products h1, h5 {
+    color: #fff;
+}
+
+@media screen and (max-width: 576px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+}
