@@ -7,6 +7,7 @@ import SocialLogin from "../SocialLogin/SocialLogin";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import Loading from "../Loading/Loading";
+import PageTitle from "../PageTitle/PageTitle";
 
 const Login = () => {
     const navigate = useNavigate();
@@ -43,6 +44,7 @@ const Login = () => {
 
     return (
         <div className="container login-container mt-5">
+            <PageTitle title="Login"></PageTitle>
             <div className="custom-login">
                 <div className="login-left">
                     <h3 className="text-center mt-3">Login</h3>

@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import auth from "../../Firebase/firebase.init";
 import "./AddPerfume.css";
 import Swal from "sweetalert2";
+import PageTitle from "../PageTitle/PageTitle";
 
 const AddPerfume = () => {
     const [user] = useAuthState(auth);
@@ -32,6 +33,7 @@ const AddPerfume = () => {
     };
     return (
         <div className="login-container my-3">
+            <PageTitle title="Add Items"></PageTitle>
             <h2 className="text-secondary text-center mb-2">
                 Add Inventory Item
             </h2>

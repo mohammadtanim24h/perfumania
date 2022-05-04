@@ -3,6 +3,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import Swal from "sweetalert2";
 import auth from "../../Firebase/firebase.init";
 import MyPerfume from "../MyPerfume/MyPerfume";
+import PageTitle from "../PageTitle/PageTitle";
 import "./MyItems.css";
 
 const MyItems = () => {
@@ -50,6 +51,7 @@ const MyItems = () => {
     };
     return (
         <div className="my-3 container my-items-container">
+            <PageTitle title="My Items"></PageTitle>
             <h2 className="mb-3 text-secondary text-center">My Items: {perfumes.length}</h2>
             <div className="row mb-3">
                 {perfumes.map((perfume) => (

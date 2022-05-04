@@ -3,6 +3,7 @@ import { Table } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import usePerfumes from "../../hooks/usePerfumes";
+import PageTitle from "../PageTitle/PageTitle";
 import PerfumeTable from "../PerfumeTable/PerfumeTable";
 import "./ManageInventory.css";
 
@@ -41,6 +42,7 @@ const ManageInventory = () => {
     };
     return (
         <div className="mt-3">
+            <PageTitle title="Manage Inventory"></PageTitle>
             <h2 className="text-center text-secondary my-3">
                 Manage Inventory
             </h2>

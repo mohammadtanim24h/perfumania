@@ -7,6 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase/firebase.init';
 import Loading from '../Loading/Loading';
+import PageTitle from '../PageTitle/PageTitle';
 
 const Register = () => {
     // Create user Hook
@@ -49,6 +50,7 @@ const Register = () => {
     }
     return (
         <div className="container login-container mt-5">
+            <PageTitle title="Register"></PageTitle>
             <div className="custom-login">
                 <div className="login-left">
                     <h3 className="text-center mt-3">Register</h3>

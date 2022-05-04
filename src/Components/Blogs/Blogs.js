@@ -1,9 +1,11 @@
 import React from "react";
+import PageTitle from "../PageTitle/PageTitle";
 import "./Blogs.css";
 
 const Blogs = () => {
     return (
         <div className="container">
+            <PageTitle title="Blogs"></PageTitle>
             <div className="blogs-container">
                 <div className="blog">
                     <h4>Difference between Javascript and Nodejs</h4>
