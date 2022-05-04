@@ -1,9 +1,11 @@
 import React from "react";
+import PageTitle from "../PageTitle/PageTitle";
 import './About.css';
 
 const About = () => {
     return (
         <div className="container about-container mt-3">
+            <PageTitle title="About"></PageTitle>
             <div className="p-3 shadow">
                 <p>
                     Perfumania is a well established warehouse of beauty and
