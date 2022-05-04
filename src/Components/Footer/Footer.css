@@ -12,6 +12,7 @@
 .footer-right {
     display: flex;
     justify-content: space-around;
+    padding-top: 25px;
     min-height: 150px;
 }
 
