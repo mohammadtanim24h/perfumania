@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import PageTitle from '../PageTitle/PageTitle';
 import './Inventory.css';
 
 const Inventory = () => {
@@ -16,6 +18,13 @@ const Inventory = () => {
     }, [id, reload])
 
     const handleDeliver = () => {
+        if(parseInt(perfume?.quantity) === 0) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Not enough perfumes to deliver!',
+              })
+        }
         if(parseInt(perfume?.quantity) > 0) {
             fetch(`http://localhost:5000/perfume/${id}`, {
                 method: "PUT",
@@ -34,6 +43,15 @@ const Inventory = () => {
     const handleRestock = (e) => {
         e.preventDefault();
         const restockQuantity = parseInt(e.target.quantity.value);
+        if(restockQuantity < 0) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'You cannot stock negative quantity!',
+              })
+            e.target.reset();
+            return;
+        }
         fetch(`http://localhost:5000/perfume/${id}`, {
             method: "PUT",
             headers: {
@@ -49,6 +67,7 @@ const Inventory = () => {
     }
     return (
         <div className="container">
+            <PageTitle title="Inventory"></PageTitle>
             <div className='inventory-single row mt-5'>
                 <div className="col-lg-6">
                     <div className="perfume-card exclude">
@@ -56,6 +75,7 @@ const Inventory = () => {
                             <h4 className="text-secondary">{perfume?.name}</h4>
                             <p>Price: ${perfume?.price}</p>
                             <p>{perfume?.description}</p>
+                            <p>Product ID: {perfume?._id}</p>
                             <p>Supplier: {perfume?.supplier}</p>
                             <p>Quantity: {perfume?.quantity}</p>
                             <p>Sold: {perfume?.sold}</p>
