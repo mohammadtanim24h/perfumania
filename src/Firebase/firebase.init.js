@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDNjgbuZhKUtfe22HkjWzhg7JgOjecafxE",
-  authDomain: "perfumania-4c8ba.firebaseapp.com",
-  projectId: "perfumania-4c8ba",
-  storageBucket: "perfumania-4c8ba.appspot.com",
-  messagingSenderId: "382079066007",
-  appId: "1:382079066007:web:aa917c98045b1e8dcf6ed2"
+  apiKey:process.env.REACT_APP_apiKey,
+  authDomain:process.env.REACT_APP_authDomain,
+  projectId:process.env.REACT_APP_projectId,
+  storageBucket:process.env.REACT_APP_storageBucket,
+  messagingSenderId:process.env.REACT_APP_messagingSenderId,
+  appId:process.env.REACT_APP_appId,
 };
 
 const app = initializeApp(firebaseConfig);
