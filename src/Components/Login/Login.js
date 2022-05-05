@@ -48,8 +48,20 @@ const Login = () => {
     // navigate to protected route or homepage
     useEffect(() => {
         if (user) {
-            console.log(user);
-            navigate(from, { replace: true });
+            const email = user?.user?.email;
+            fetch("http://localhost:5000/login", {
+                method: "POST",
+                headers: {
+                    "content-type": "application/json"
+                },
+                body: JSON.stringify({email})
+            })
+            .then(res => res.json())
+            .then(data => {
+                localStorage.setItem("accessToken", data.token);
+                // Navigate after successful login
+                navigate(from, { replace: true });
+            })
         }
     }, [user]);
 

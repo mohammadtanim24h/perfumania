@@ -10,10 +10,20 @@ const MyItems = () => {
     const [user] = useAuthState(auth);
     const email = user?.email;
     const [perfumes, setPerfumes] = useState([]);
+    const [unauthorizedMessage, setUnauthorizedMessage] = useState("");
     useEffect(() => {
-        fetch(`http://localhost:5000/perfumes?email=${email}`)
+        fetch(`http://localhost:5000/myPerfumes?email=${email}&token=${localStorage.getItem("accessToken")}`)
             .then((res) => res.json())
-            .then((data) => setPerfumes(data));
+            .then((data) => {
+                console.log(data)
+                if(data.authorization === 'successful') {
+                    setPerfumes(data.perfumes);
+                }
+                if(data.authorization === 'failed') {
+                    setPerfumes(data.perfumes);
+                    setUnauthorizedMessage("You are Unauthorized. To update your Access Token, Please login again.");
+                }
+            });
     }, [email]);
 
     // Delete Perfume
@@ -53,6 +63,7 @@ const MyItems = () => {
         <div className="my-3 container my-items-container">
             <PageTitle title="My Items"></PageTitle>
             <h2 className="mb-3 text-secondary text-center">My Items: {perfumes.length}</h2>
+            <h4 className="mb-3 text-danger text-center">{unauthorizedMessage && unauthorizedMessage}</h4>
             <div className="row mb-3">
                 {perfumes.map((perfume) => (
                     <MyPerfume
