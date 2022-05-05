@@ -17,6 +17,7 @@ const Inventory = () => {
             })
     }, [id, reload])
 
+    // Perfume Deliver
     const handleDeliver = () => {
         if(parseInt(perfume?.quantity) === 0) {
             Swal.fire({
@@ -40,6 +41,7 @@ const Inventory = () => {
         }
     }
 
+    // Perfume Restock
     const handleRestock = (e) => {
         e.preventDefault();
         const restockQuantity = parseInt(e.target.quantity.value);

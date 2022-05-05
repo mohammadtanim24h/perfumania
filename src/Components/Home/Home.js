@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import usePerfumes from "../../hooks/usePerfumes";
 import Banner from "../Banner/Banner";
 import Dashboard from "../Dashboard/Dashboard";
+import Loading from "../Loading/Loading";
 import PageTitle from "../PageTitle/PageTitle";
 import Perfume from "../Perfume/Perfume";
 import TopProducts from "../TopProducts/TopProducts";
@@ -10,6 +11,9 @@ import "./Home.css";
 
 const Home = () => {
     const [perfumes] = usePerfumes();
+    if(perfumes.length === 0) {
+        return <Loading></Loading>
+    }
     return (
         <div>
             <PageTitle title="Home"></PageTitle>

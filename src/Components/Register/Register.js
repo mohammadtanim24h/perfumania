@@ -27,6 +27,8 @@ const Register = () => {
     }, [user])
 
     const [error, setError] = useState("");
+    
+    // Register User
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         const email = data.email;
