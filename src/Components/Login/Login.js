@@ -1,12 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import "./Login.css";
 import { GiPartyPopper } from "react-icons/gi";
 import auth from '../../Firebase/firebase.init';
 import SocialLogin from "../SocialLogin/SocialLogin";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import Loading from "../Loading/Loading";
 import PageTitle from "../PageTitle/PageTitle";
+import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -28,6 +30,21 @@ const Login = () => {
         signInWithEmailAndPassword(email, password);
     };
 
+    // Password reset
+    const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
+
+    const emailRef = useRef('');
+    const resetPassword = async () => {
+        const email = emailRef.current.value;
+        if(email) {
+            await sendPasswordResetEmail(email);
+            toast('Email Sent!');
+        }
+        else {
+            toast('Email is required to send password reset email');
+        }
+    }
+
     // navigate to protected route or homepage
     useEffect(() => {
         if (user) {
@@ -48,9 +65,9 @@ const Login = () => {
                 <div className="login-left">
                     <h3 className="text-center mt-3">Login</h3>
                     <form className="login-form" onSubmit={handleLogin}>
-                        <input className="mb-3" name="email" placeholder="Email" type="email" required/>
+                        <input className="mb-3" ref={emailRef} name="email" placeholder="Email" type="email" required/>
                         <input className="mb-3" name="password" placeholder="Password" type="password" required/>
-                        <p className="text-center">Forgot password? <span className="reset" style={{cursor: 'pointer'}}>Reset</span></p>
+                        <p className="text-center">Forgot password? <span className="reset" onClick={resetPassword} style={{cursor: 'pointer'}}>Reset</span></p>
                         {error && <p className="text-center text-danger">{error.message.slice(10, )}</p> }
                         <input className="submit-btn w-50 mx-auto rounded-pill" type="submit" value="Login" />
                     </form>
@@ -65,6 +82,7 @@ const Login = () => {
                     </div>
                 </div>
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };
