@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import "./Login.css";
-import { useForm } from "react-hook-form";
 import { GiPartyPopper } from "react-icons/gi";
 import auth from '../../Firebase/firebase.init';
 import SocialLogin from "../SocialLogin/SocialLogin";
@@ -21,11 +20,11 @@ const Login = () => {
         error,
       ] = useSignInWithEmailAndPassword(auth);
 
-    // Login Function  
-    const { register, handleSubmit } = useForm();
-    const onSubmit = data => {
-        const email = data.email;
-        const password = data.password;
+    // Login Function
+    const handleLogin = (e) => {
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
         signInWithEmailAndPassword(email, password);
     };
 
@@ -48,9 +47,9 @@ const Login = () => {
             <div className="custom-login">
                 <div className="login-left">
                     <h3 className="text-center mt-3">Login</h3>
-                    <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
-                        <input className="mb-3" placeholder="Email" type="email" {...register("email")} required/>
-                        <input className="mb-3" placeholder="Password" type="password" {...register("password")} required/>
+                    <form className="login-form" onSubmit={handleLogin}>
+                        <input className="mb-3" name="email" placeholder="Email" type="email" required/>
+                        <input className="mb-3" name="password" placeholder="Password" type="password" required/>
                         <p className="text-center">Forgot password? <span className="reset" style={{cursor: 'pointer'}}>Reset</span></p>
                         {error && <p className="text-center text-danger">{error.message.slice(10, )}</p> }
                         <input className="submit-btn w-50 mx-auto rounded-pill" type="submit" value="Login" />
