@@ -4,7 +4,7 @@ import TopProduct from '../TopProduct/TopProduct';
 const TopProducts = () => {
     const [perfumes, setPerfumes] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/topProducts")
+        fetch("https://murmuring-stream-35906.herokuapp.com/topProducts")
             .then(res => res.json())
             .then(data => setPerfumes(data));
     }, [])

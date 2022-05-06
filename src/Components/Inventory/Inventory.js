@@ -10,7 +10,7 @@ const Inventory = () => {
     const [perfume, setPerfume] = useState({});
     const [reload, setReload] = useState(false);
     useEffect(() => {
-        fetch(`http://localhost:5000/perfume/${id}`)
+        fetch(`https://murmuring-stream-35906.herokuapp.com/perfume/${id}`)
             .then(res => res.json())
             .then(data => {
                 setPerfume(data);
@@ -27,7 +27,7 @@ const Inventory = () => {
               })
         }
         if(parseInt(perfume?.quantity) > 0) {
-            fetch(`http://localhost:5000/perfume/${id}`, {
+            fetch(`https://murmuring-stream-35906.herokuapp.com/perfume/${id}`, {
                 method: "PUT",
                 headers: {
                     "content-type": "application/json"
@@ -54,7 +54,7 @@ const Inventory = () => {
             e.target.reset();
             return;
         }
-        fetch(`http://localhost:5000/perfume/${id}`, {
+        fetch(`https://murmuring-stream-35906.herokuapp.com/perfume/${id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

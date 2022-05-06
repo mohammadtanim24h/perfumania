@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const useQuantity = () => {
     const [quantity, setQuantity] = useState(0);
     useEffect(() => {
-        fetch("http://localhost:5000/perfumes")
+        fetch("https://murmuring-stream-35906.herokuapp.com/perfumes")
             .then((res) => res.json())
             .then((data) => {
                 if (data.length > 0) {

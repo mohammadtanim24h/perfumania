@@ -24,7 +24,7 @@ const ManageInventory = () => {
             confirmButtonText: "Yes, delete it!",
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/perfume/${id}`, {
+                fetch(`https://murmuring-stream-35906.herokuapp.com/perfume/${id}`, {
                     method: "DELETE",
                 })
                     .then((res) => res.json())

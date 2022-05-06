@@ -12,7 +12,7 @@ const MyItems = () => {
     const [perfumes, setPerfumes] = useState([]);
     const [unauthorizedMessage, setUnauthorizedMessage] = useState("");
     useEffect(() => {
-        fetch(`http://localhost:5000/myPerfumes?email=${email}&token=${localStorage.getItem("accessToken")}`)
+        fetch(`https://murmuring-stream-35906.herokuapp.com/myPerfumes?email=${email}&token=${localStorage.getItem("accessToken")}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data)
@@ -39,7 +39,7 @@ const MyItems = () => {
             confirmButtonText: "Yes, delete it!",
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/perfume/${id}`, {
+                fetch(`https://murmuring-stream-35906.herokuapp.com/perfume/${id}`, {
                     method: "DELETE",
                 })
                     .then((res) => res.json())

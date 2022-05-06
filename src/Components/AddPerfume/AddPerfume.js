@@ -11,7 +11,7 @@ const AddPerfume = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = (data, e) => {
         console.log(data);
-        fetch("http://localhost:5000/perfume", {
+        fetch("https://murmuring-stream-35906.herokuapp.com/perfume", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
