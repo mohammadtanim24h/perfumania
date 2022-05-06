@@ -43,4 +43,8 @@
     .dashboard-container {
         flex-direction: column;
     }
+    .perfumes-sold, .total-quantity, .total-products{
+        width: 100%;
+        margin: 5px;
+    }
 }

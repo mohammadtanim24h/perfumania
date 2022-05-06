@@ -6,6 +6,7 @@ import Dashboard from "../Dashboard/Dashboard";
 import Loading from "../Loading/Loading";
 import PageTitle from "../PageTitle/PageTitle";
 import Perfume from "../Perfume/Perfume";
+import ReportIssues from "../ReportIssues/ReportIssues";
 import TopProducts from "../TopProducts/TopProducts";
 import "./Home.css";
 
@@ -44,8 +45,8 @@ const Home = () => {
             <div className="container">
                 <hr className="my-3" />
             </div>
-            
             <TopProducts></TopProducts>
+            <ReportIssues></ReportIssues>
         </div>
     );
 };
