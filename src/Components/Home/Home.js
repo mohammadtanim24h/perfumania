@@ -36,15 +36,10 @@ const Home = () => {
                     </Link>
                 </div>
             </div>
-            <div className="container">
-                <hr className="my-3" />
-            </div>
+            
             <h2 className="text-center text-secondary">Dashboard</h2>
             <Dashboard></Dashboard>
             
-            <div className="container">
-                <hr className="my-3" />
-            </div>
             <TopProducts></TopProducts>
             <ReportIssues></ReportIssues>
         </div>

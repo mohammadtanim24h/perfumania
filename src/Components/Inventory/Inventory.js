@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 import Swal from 'sweetalert2';
 import PageTitle from '../PageTitle/PageTitle';
 import './Inventory.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Inventory = () => {
     const {id} = useParams();
@@ -64,6 +66,7 @@ const Inventory = () => {
         .then(res => res.json())
         .then(data => {
             setReload(!reload);
+            toast("Perfume Restocked Successfully!")
         })
         e.target.reset();
     }
@@ -104,6 +107,7 @@ const Inventory = () => {
                     </button>
                 </Link>
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };
