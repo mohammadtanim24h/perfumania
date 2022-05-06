@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+# Perfumania
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the live site link [Perfumania](https://perfumania-4c8ba.web.app/).
 
-## Available Scripts
+## Project Details
 
-In the project directory, you can run:
+* This is an Inventory management website. Here you can add your products, manage and maintain them. You can keep track of them on this website and much more.
 
-### `npm start`
+* On the homepage, you will find a navbar with some links to navigate within the website. Also, there is a banner and six inventory items. There is a dashboard to keep track of how many products were sold, total quantity, and the total number of products. There is a top product section which shows us the highest sold products of the last month. They are shown in a descending order. There is a section where you can report issues you faced while using the website (It is not saved in the database for the time being). Lastly, there is a simple static footer.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* On the homepage items section, there is an update button on every item. If you click on it, you will be redirected to a page where you can deliver the product and restock it as you need. But this is a protected page. So, you have to log in to access the page. Also under the inventory items section of the homepage, you have a manage inventories button. If clicked, it will redirect you to the Manage Inventory page. This is also a protected route. Which means you can only access it if you are logged in. There you can see all the products of the website in a tabular form. Also, You can delete any product from there.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* If you log in, you will see a dropdown menu called Inventory on the navbar. It has three dropdown items. Manage items, Add items, and My items. Manage items will take you to the manage inventory page. Add items will take you to Add inventory item page, where you can add your products. Lastly, if you click My Items, it will take you to the my items page. Here you will only see the products you have added. JWT is implemented in the My items page. So you have to have a valid access token to access it. These three dropdown items are protected. So you have to log in to access them. N.B you will also find the add items button on the manage inventories page.
 
-### `npm test`
+* There is a blogs section where there are answers to four important questions about NodeJs, MongoDB, Databases, and JWT. Also, there is an about section which holds some information about perfumania and its services.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* There is a login link in the navbar which will take you to the login page. From there you can login using email and password. You can also use google and github to login. Facebook login doesn't work, because I haven't implemented the feature yet. You can also register if you don't have an account already. There is a Reset password link if you ever forget your password. If you log in, a logout button will appear in the navbar. If clicked it will log you out.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Technologies used :
+* CSS Framework : Bootstrap
+* React Librarys :
+1. React Router
+2. React Bootstrap
+3. React Firebase Hooks
+4. React Icons
+5. React Toastify
+6. React Hook Form
+7. React Helmet Async
+8. Sweet Alert
