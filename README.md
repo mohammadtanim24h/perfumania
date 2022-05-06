@@ -1,6 +1,6 @@
 # Perfumania
 
-This is the live site link [Perfumania](https://perfumania-4c8ba.web.app/).
+### Here is the [Live Website Link](https://perfumania-4c8ba.web.app/) to view it in your browser.
 
 ## Project Details
 
@@ -20,11 +20,11 @@ This is the live site link [Perfumania](https://perfumania-4c8ba.web.app/).
 ## Technologies used :
 * CSS Framework : Bootstrap
 * React Librarys :
-1. React Router
-2. React Bootstrap
-3. React Firebase Hooks
-4. React Icons
-5. React Toastify
-6. React Hook Form
-7. React Helmet Async
-8. Sweet Alert
+    1. React Router
+    2. React Bootstrap
+    3. React Firebase Hooks
+    4. React Icons
+    5. React Toastify
+    6. React Hook Form
+    7. React Helmet Async
+    8. Sweet Alert
