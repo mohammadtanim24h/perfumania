@@ -19,7 +19,20 @@ const SocialLogin = () => {
     // navigate to protected route or homepage
     useEffect(() => {
         if(userGoogle || userGit) {
-            navigate(from, { replace: true });
+            const email = userGoogle?.user?.email || userGit?.user?.email;
+            fetch("http://localhost:5000/login", {
+                method: "POST",
+                headers: {
+                    "content-type": "application/json"
+                },
+                body: JSON.stringify({email})
+            })
+            .then(res => res.json())
+            .then(data => {
+                localStorage.setItem("accessToken", data.token);
+                // navigate after successful login
+                navigate(from, { replace: true });
+            })
         }
     }, [userGoogle, userGit])
     return (
