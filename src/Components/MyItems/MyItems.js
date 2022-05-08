@@ -12,7 +12,11 @@ const MyItems = () => {
     const [perfumes, setPerfumes] = useState([]);
     const [unauthorizedMessage, setUnauthorizedMessage] = useState("");
     useEffect(() => {
-        fetch(`https://murmuring-stream-35906.herokuapp.com/myPerfumes?email=${email}&token=${localStorage.getItem("accessToken")}`)
+        fetch(`https://murmuring-stream-35906.herokuapp.com/myPerfumes?email=${email}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem("accessToken")}`
+            }
+        })
             .then((res) => res.json())
             .then((data) => {
                 console.log(data)
